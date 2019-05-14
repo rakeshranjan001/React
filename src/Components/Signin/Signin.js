@@ -21,14 +21,15 @@ export default class Signin extends Component {
         })
     }
     onSubmitSignin =() =>{
-        fetch('http://node-masters.herokuapp.com/login',{
-            method: 'post',
+        fetch('https://node-masters.herokuapp.com/login',{
+            method: 'POST',
             headers: {'Content-Type':'application/json'},
-            body: ({
+            body:JSON.stringify ({
                 email: this.state.LoginEmail,
                 password:this.state.LoginPassword
             })
         })
+        this.props.onRouteChange('userhome')
     }
 
     render() {
@@ -52,7 +53,7 @@ export default class Signin extends Component {
                     </div>
                 </nav>
 
-                <div className="" Style = "background-image : url(http://mrmrs.github.io/photos/u/011.jpg)">
+                <div Style = "background-image : url(https://mrmrs.github.io/photos/u/011.jpg)">
                     <div className="pb5 pb6-m pb7-l bg-black-80">
                         <article className="mw5-5 center pa3 shadow-3 bg-white br4 pa3 pa4-ns pv2 ba b--black-10">
                             <p>Sign in to Doc Manage</p>
