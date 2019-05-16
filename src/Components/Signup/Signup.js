@@ -1,26 +1,126 @@
-import React,{Component} from 'react';
+import React from 'react'
+import './Signup.css'
+class Signup extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            Name: '',
+            Email: '',
+            Password: ''
+        }
+    }
+    onEmailChange = (event) => {
+        this.setState({
+            Email: event.target.value
+        })
+    }
+    onPasswordChange = (event) => {
+        this.setState({
+            Password: event.target.value
+        })
+    }
+    onNameChange = (event) => {
+        this.setState({
+            Name: event.target.value
+        })
+    }
+    onSubmitSignup = () => {
+        fetch("https://node-masters.herokuapp.com/signup", {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: this.state.Email,
+                password: this.state.Password,
+                name: this.state.Name
+            })
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+    }
+    render() {
+        // const { onRouteChange } = this.props;
+        return (
+            <div className="cover bg-left bg-center-l">
+                <nav className="flex justify-between bb b--white-10 bg-black-90">
+                    <div className="dtc w2 v-mid pa3">
+                        <a href="/" className="dib w2 h2 pa1 ba b--white-90 grow-large border-box">
+                            <svg className="link white-90 hover-white" data-icon="skull" viewBox="0 0 32 32"><title>skull icon</title><path d="M16 0 C6 0 2 4 2 14 L2 22 L6 24 L6 30 L26 30 L26 24 L30 22 L30 14 C30 4 26 0 16 0 M9 12 A4.5 4.5 0 0 1 9 21 A4.5 4.5 0 0 1 9 12 M23 12 A4.5 4.5 0 0 1 23 21 A4.5 4.5 0 0 1 23 12"></path></svg>
+                        </a>
+                    </div>
+                    <a className="link white-70 hover-white no-underline flex items-center pa3"
+                        href="/">
+                        {/* <svg
+                            className="dib h1 w1"
+                            data-icon="grid"
+                            viewBox="0 0 32">
+                            <title>Super Normal Icon Mark</title>
+                            <path d="M2 2 L10 2 L10 10 L2 10z M12 2 L20 2 L20 10 L12 10z M22 2 L30 2 L30 10 L22 10z M2 12 L10 12 L10 20 L2 20z M12 12 L20 12 L20 20 L12 20z M22 12 L30 12 L30 20 L22 20z M2 22 L10 22 L10 30 L2 30z M12 22 L20 22 L20 30 L12 30z M22 22 L30 22 L30 30 L22 30z">
+                            </path>
 
-export default class Signup extends Component{
-    render(){
-        return(
-            <article class="pa4 black-80">
-            <form action="sign-up_submit" method="get" accept-charset="utf-8">
-                <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
-                <legend class="ph0 mh0 fw6 clip">Sign Up</legend>
-                <div class="mt3">
-                    <label class="db fw4 lh-copy f6" for="email-address">Email address</label>
-                    <input class="pa2 input-reset ba bg-transparent w-100 measure" type="email" name="email-address"  id="email-address"/>
+                        </svg> */}
+                    </a>
+                    <div className="flex-grow pa3 flex items-center">
+                        <a className="f6 link dib white dim mr3 mr4-ns" href="/" >About</a>
+                        <a className="f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" href="#0">Sign Up</a>
+                    </div>
+                </nav>
+
+                <div style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }}>
+                    <div className="pb5 pb6-m pb7-l bg-black-80">
+                        <article className="mw5-5 center pa3 shadow-3 bg-white br4 pa3 pa4-ns pv2 ba b--black-10">
+                            <p>Sign up to Doc Manage</p>
+                            <main className="pa1">
+                                <div className="measure right h-left fw2 f6 mt3 mb4">
+                                    <fieldset id="sign_in" className="ba b--transparent ph0 mh0">
+                                        <div className="mt3">
+                                            <label htmlFor="Name">Name</label>
+                                            <input
+                                                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                                                type="Name"
+                                                name="Name"
+                                                id="Name"
+                                                onChange={this.onNameChange}
+                                            />
+                                        </div>
+                                        <div className="mt3">
+                                            <label htmlFor="email-address">Email</label>
+                                            <input
+                                                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                                                type="email"
+                                                name="login-email"
+                                                id="email-address"
+                                                onChange={this.onEmailChange}
+                                            />
+                                        </div>
+                                        <div className="mv3">
+                                            <label htmlFor="password">Password</label>
+                                            <input
+                                                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                                                type="password"
+                                                name="login-password"
+                                                id="password"
+                                                onChange={this.onPasswordChange}
+                                            />
+                                        </div>
+                                        <label>
+                                            <input type="checkbox" /> Remember me
+                                    </label>
+                                    </fieldset>
+                                    <div>
+                                        <input
+                                            type="submit"
+                                            className="f6 link dim ba ph3 pv2 mb2 dib near-black"
+                                            onClick={this.onSubmitSignup}
+                                            value="Signup" />
+                                    </div>
+                                </div>
+                            </main>
+                        </article>
+                    </div>
                 </div>
-                <div class="mt3">
-                    <label class="db fw4 lh-copy f6" for="password">Password</label>
-                    <input class="b pa2 input-reset ba bg-transparent" type="password" name="password"  id="password"/>
-                </div>
-                </fieldset>
-                <div class="mt3">
-                    <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6" type="submit" value="Sign Up"/>
-                </div>
-            </form>
-            </article>
+            </div>
         );
     }
 }
+
+export default Signup

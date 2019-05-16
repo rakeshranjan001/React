@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import Home from './Home';
-import Signin from './Components/Signin/Signin'
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 
-
-ReactDOM.render(<Signin/>, document.getElementById('root'));
-
+ReactDOM.render(<App/>, document.getElementById('root'));
 serviceWorker.unregister();
