@@ -51,7 +51,7 @@ class App extends Component {
   // }
   render() {
     return (
-      <div>{this.state.isSignedin === true ? <UserHome user={this.state.user} /> : (
+      <div>{this.state.isSignedin === true ? <UserHome onRouteChange={this.onRouteChange} user={this.state.user} onSignout={this.onSignout}/> : (
         this.state.route === 'Home' ? <Home onRouteChange={this.onRouteChange} /> : (
           this.state.route === 'Signin' ? <Signin onRouteChange={this.onRouteChange} onSignIn ={this.onSignIn}/> :
             <Signup onRouteChange={this.onRouteChange} />
