@@ -28,7 +28,10 @@ class Signin extends React.Component {
             })
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                this.props.onSignIn(data)
+                // console.log(data)
+            })
     }
     render() {
         // const { onRouteChange } = this.props;
