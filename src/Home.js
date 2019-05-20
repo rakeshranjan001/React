@@ -21,7 +21,7 @@ class Home extends React.Component {
                 <button className="f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 mh1 ph3 br-pill bg-black-80" onClick={() => onRouteChange('Signin')}>Signin</button>
               </div>
             </nav>
-            <div className="mh5 tc-l mt4 mt5-m mt6-l ph3">
+            <div className="mh2 pa3 pb5 tc-l mt4 mt5-m mt6-l ph3">
               <h1 className="f2 f1-l fw2 white-90 mb0 lh-title">A better way to store your favorite reference pages</h1>
               <h2 className="fw1 f3 white-80 mt3 mb4">
                 <p>Do you keep forgetting that website where you read that amazing article on the latest tech ? </p>

@@ -46,7 +46,7 @@ class Signin extends React.Component {
                 // console.log(data)
             })
             .catch(err =>{
-                console.log(err);
+               // console.log(err);
                 this.onWrongPassword();
             })
     }

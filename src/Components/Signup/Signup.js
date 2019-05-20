@@ -58,7 +58,7 @@ class Signup extends React.Component {
                         <article className="mw5-5 center pa3 shadow-3 bg-white br4 pa3 pa4-ns pv2 ba b--black-10">
                             <p>Sign up to Doc Manage</p>
                             <main className="pa1">
-                                <div className="measure right h-left fw2 f6 mt3 mb4">
+                                <div className="measure right h-left fw2 f6 mt3">
                                     <fieldset id="sign_in" className="ba b--transparent ph0 mh0">
                                         <div className="mt3">
                                             <label htmlFor="Name">Name</label>
@@ -80,10 +80,10 @@ class Signup extends React.Component {
                                                 onChange={this.onEmailChange}
                                             />
                                         </div>
-                                        <div className="mv3">
+                                        <div className="mt3 pb2">
                                             <label htmlFor="password">Password</label>
                                             <input
-                                                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                                                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                                                 type="password"
                                                 name="login-password"
                                                 id="password"
@@ -97,7 +97,7 @@ class Signup extends React.Component {
                                     <div>
                                         <input
                                             type="submit"
-                                            className="f6 link dim ba ph3 pv2 mb2 dib near-black"
+                                            className="f6 link dim ba ph1 pv2 mb2 dib near-black"
                                             onClick={this.onSubmitSignup}
                                             value="Signup" />
                                     </div>
