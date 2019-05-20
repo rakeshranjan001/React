@@ -18,19 +18,19 @@ class UserHome extends React.Component {
 
                 <div >
                     <div className="pb pa5 pb6-m pb7 bg-black-80">
-                        <article class="mb6 pa5 mw5 center bg-white br3 pa3 pa4-ns ba b--black-10">
-                            <div class="measure right h-left fw2 f6 mt3 mb4 ">
-                                <img class="br-100 h3 w3 dib"
+                        <article className="mb6 pa5 mw5 center bg-white br3 pa3 pa4-ns ba b--black-10">
+                            <div className="measure right h-left fw2 f6 mt3 mb4 ">
+                                <img className="br-100 h3 w3 dib"
                                     src="https://curaflo.com/wp-content/uploads/2017/04/male-avatar1.png"
                                     title="avatar" alt="" />
 
-                                <h1 class="f4">Welcome {this.props.user.name}</h1>
-                                <hr class="mw3 bb bw1 b--black-10" />
+                                <h1 className="f4">Welcome {this.props.user.name}</h1>
+                                <hr className="mw3 bb bw1 b--black-10" />
                             </div>
-                            <p class="lh-copy measure center f6 black-70">
+                            <p className="lh-copy measure center f6 black-70">
                                 {this.props.user.email}
                             </p>
-                            <p class="lh-copy measure center f6 black-70">
+                            <p className="lh-copy measure center f6 black-70">
                                 You joined on {this.props.user.joined}
                             </p>
                         </article>

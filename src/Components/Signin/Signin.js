@@ -5,7 +5,8 @@ class Signin extends React.Component {
         super(props);
         this.state = {
             signInEmail: '',
-            signInPassword: ''
+            signInPassword: '',
+            wrongCredentialsWarning:''
         }
     }
     onEmailChange = (event) => {
@@ -18,6 +19,11 @@ class Signin extends React.Component {
             signInPassword: event.target.value
         })
     }
+    onWrongPassword = () =>{
+        this.setState({
+            wrongCredentialsWarning:"Wrong Credentials"
+        })
+    }
     onSubmitSignin = () => {
         fetch("https://node-masters.herokuapp.com/login", {
             method: 'post',
@@ -27,10 +33,21 @@ class Signin extends React.Component {
                 password: this.state.signInPassword
             })
         })
-            .then(response => response.json())
+            .then(response =>{
+                let data = response.json()
+                let status = response.status
+                if(status!==200){
+                    throw new Error("Wrong Credentials");
+                }
+                return data
+            })
             .then(data => {
                 this.props.onSignIn(data)
                 // console.log(data)
+            })
+            .catch(err =>{
+                console.log(err);
+                this.onWrongPassword();
             })
     }
     render() {
@@ -86,6 +103,7 @@ class Signin extends React.Component {
                                             className="f6 link dim ba ph3 pv2 mb2 dib near-black"
                                             onClick={this.onSubmitSignin}
                                             value="Signin" />
+                                            <p className="red link dim">{this.state.wrongCredentialsWarning}</p>
                                     </div>
                                     <div className="lh-copy mt3">
                                         <a href="/recover" className="f6 link dim black db">Forgot your password?</a>
