@@ -9,7 +9,7 @@ class App extends Component {
     this.onRouteChange = this.onRouteChange.bind(this);
     this.onSignIn = this.onSignIn.bind(this);
     this.state = {
-      route: 'signup',
+      route: 'Home',
       isSignedin: false,
       user: {
         name: '',
