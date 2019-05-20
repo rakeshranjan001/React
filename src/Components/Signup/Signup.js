@@ -40,7 +40,7 @@ class Signup extends React.Component {
     render() {
         const { onRouteChange } = this.props;
         return (
-            <div className="cover bg-left bg-center-l bg-black-80 pb5 pb6-m pb7-l">
+            <div style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }} className="cover bg-left bg-center-l">
                 <nav className="flex justify-between bb b--white-10 bg-black-90">
                     <div className="dtc w2 v-mid pa3">
                         <a href="/" className="dib w2 h2 pa1 ba b--white-90 grow-large border-box">
