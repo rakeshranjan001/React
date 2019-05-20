@@ -34,7 +34,7 @@ class Signin extends React.Component {
             })
     }
     render() {
-        // const { onRouteChange } = this.props;
+        const { onRouteChange } = this.props;
         return (
             <div  style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }} className="cover bg-left bg-center-l">
                 <nav className="flex justify-between bb b--white-10 bg-black-90">
@@ -45,12 +45,12 @@ class Signin extends React.Component {
                     </div>
                     <div className="flex-grow pa3 flex items-center">
                         <a className="f6 link dib white dim mr3 mr4-ns" href="/" >About</a>
-                        <a className="f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20" href="#0">Sign Up</a>
+                        <button className="f6 dib white hover-bg-white hover-black no-underline pv2 mh1 ph3 br-pill bg-black-80" onClick={() => onRouteChange('Signup')}>Signup</button>
                     </div>
                 </nav>
 
                 <div>
-                    <div className="pa5 pb5 pb6-m pb7-l bg-black-80 ">
+                    <div className="pa5 pb7  bg-black-80 ">
                         <article className="mw5-5 center pa3 shadow-3 bg-white br4 pa3 pa4-ns pv2 ba b--black-10">
                             <p>Sign in to Doc Manage</p>
                             <main className="">

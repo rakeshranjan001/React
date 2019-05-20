@@ -10,8 +10,10 @@ class UserHome extends React.Component {
                         </a>
                     </div>
                     <div className="flex-grow pa3 flex items-center">
-                <button className="f6 fw4  no-underline dib ml2 pv2 ph3 " onClick={() => this.props.onSignout}>Signout</button>
-              </div>
+                        <a className="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/demo" >How it Works</a>
+                        <a className="f6 fw4 hover-white no-underline white-70 dn dib-l pv2 ph3" href="/about" >About</a>
+                        <button className="f6 dib white hover-bg-white hover-black no-underline pv2 ph4 br-pill ba bg-black-90" onClick={() => this.props.onSignout}>Signout</button>
+                    </div>
                 </nav>
 
                 <div >
@@ -20,7 +22,7 @@ class UserHome extends React.Component {
                             <div class="measure right h-left fw2 f6 mt3 mb4 ">
                                 <img class="br-100 h3 w3 dib"
                                     src="https://curaflo.com/wp-content/uploads/2017/04/male-avatar1.png"
-                                    title="avatar" alt=""/>
+                                    title="avatar" alt="" />
 
                                 <h1 class="f4">Welcome {this.props.user.name}</h1>
                                 <hr class="mw3 bb bw1 b--black-10" />
