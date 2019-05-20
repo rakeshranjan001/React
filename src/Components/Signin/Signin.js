@@ -36,7 +36,7 @@ class Signin extends React.Component {
     render() {
         // const { onRouteChange } = this.props;
         return (
-            <div className="cover bg-left bg-center-l">
+            <div  style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }} className="cover bg-left bg-center-l">
                 <nav className="flex justify-between bb b--white-10 bg-black-90">
                     <div className="dtc w2 v-mid pa3">
                         <a href="/" className="dib w2 h2 pa1 ba b--white-90 grow-large border-box">
@@ -49,11 +49,11 @@ class Signin extends React.Component {
                     </div>
                 </nav>
 
-                <div style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }}>
-                    <div className="pb5 pb6-m pb7-l bg-black-80">
+                <div>
+                    <div className="pa5 pb5 pb6-m pb7-l bg-black-80 ">
                         <article className="mw5-5 center pa3 shadow-3 bg-white br4 pa3 pa4-ns pv2 ba b--black-10">
                             <p>Sign in to Doc Manage</p>
-                            <main className="pa1">
+                            <main className="">
                                 <div className="measure right h-left fw2 f6 mt3 mb4">
                                     <fieldset id="sign_in" className="ba b--transparent ph0 mh0">
                                         <div className="mt3">

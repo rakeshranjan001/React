@@ -2,7 +2,7 @@ import React from 'react';
 class UserHome extends React.Component {
     render() {
         return (
-            <div className="sans-serif cover bg-left bg-center-l ">
+            <div className="cover bg-left bg-center-l" style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }}>
                 <nav className="flex justify-between bb b--white-10 bg-black-90">
                     <div className="dtc w2 v-mid pa3">
                         <a href="/" className="dib w2 h2 pa1 ba b--white-90 grow-large border-box">
@@ -10,18 +10,17 @@ class UserHome extends React.Component {
                         </a>
                     </div>
                     <div className="flex-grow pa3 flex items-center">
-                {/* <button className="f6 fw4  no-underline dib ml2 pv2 ph3 " onClick={() => onRouteChange('Signup')}></button> */}
                 <button className="f6 fw4  no-underline dib ml2 pv2 ph3 " onClick={() => this.props.onSignout}>Signout</button>
               </div>
                 </nav>
 
-                <div className="tc-l">
-                    <div className="pb5 pb6-m pb7-l bg-black-80">
-                        <article class="mw5 center bg-white br3 pa3 pa4-ns ba b--black-10">
-                            <div class="tc">
+                <div >
+                    <div className="pb pa5 pb6-m pb7 bg-black-80">
+                        <article class="mb6 pa5 mw5 center bg-white br3 pa3 pa4-ns ba b--black-10">
+                            <div class="measure right h-left fw2 f6 mt3 mb4 ">
                                 <img class="br-100 h3 w3 dib"
                                     src="https://curaflo.com/wp-content/uploads/2017/04/male-avatar1.png"
-                                    title="avatar" />
+                                    title="avatar" alt=""/>
 
                                 <h1 class="f4">Welcome {this.props.user.name}</h1>
                                 <hr class="mw3 bb bw1 b--black-10" />

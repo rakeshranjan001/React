@@ -54,7 +54,7 @@ class Signup extends React.Component {
                 </nav>
 
                 <div style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }}>
-                    <div className="pb5 pb6-m pb7-l bg-black-80">
+                    <div className="pa5 pb5 pb6-m pb7-l bg-black-80">
                         <article className="mw5-5 center pa3 shadow-3 bg-white br4 pa3 pa4-ns pv2 ba b--black-10">
                             <p>Sign up to Doc Manage</p>
                             <main className="pa1">
