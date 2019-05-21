@@ -6,7 +6,8 @@ class Signup extends React.Component {
         this.state = {
             Name: '',
             Email: '',
-            Password: ''
+            Password: '',
+            errorMsg:''
         }
     }
     onEmailChange = (event) => {
@@ -34,8 +35,23 @@ class Signup extends React.Component {
                 name: this.state.Name
             })
         })
-            .then(response => response.json())
+            .then(response => {
+                var data = response.json()
+                var status = response.status;
+                console.log("status = " + status)
+                if(status!==200){
+                    throw new Error("Error")
+                }
+                return data;
+            })
             .then(data => console.log(data))
+            .then(this.props.onRouteChange('Signin'))
+            .catch(err=>{
+                this.setState({
+                    errorMsg:"Unable to Register, try using a different email"
+                })
+            })
+            
     }
     render() {
         const { onRouteChange } = this.props;
@@ -57,6 +73,7 @@ class Signup extends React.Component {
                     <div className="pa5 pb5 pb7 bg-black-80">
                         <article className="mw5-5 center pa3 shadow-3 bg-white br4 pa3 pa4-ns pv2 ba b--black-10">
                             <p>Sign up to Doc Manage</p>
+                            <p className="red link dim">{this.state.errorMsg}</p>
                             <main className="pa1">
                                 <div className="measure right h-left fw2 f6 mt3">
                                     <fieldset id="sign_in" className="ba b--transparent ph0 mh0">

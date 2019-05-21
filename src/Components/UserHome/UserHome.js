@@ -17,8 +17,8 @@ class UserHome extends React.Component {
                 </nav>
 
                 <div >
-                    <div className="pb pa5 pb6-m pb7 bg-black-80">
-                        <article className="mb6 pa5 mw5 center bg-white br3 pa3 pa4-ns ba b--black-10">
+                    <div className="pa6 pb7 bg-black-80">
+                        <article className="mw5-5 center pa3 shadow-3 bg-white br4 pa3 pa4-ns pv2 ba b--black-10">
                             <div className="measure right h-left fw2 f6 mt3 mb4 ">
                                 <img className="br-100 h3 w3 dib"
                                     src="https://curaflo.com/wp-content/uploads/2017/04/male-avatar1.png"

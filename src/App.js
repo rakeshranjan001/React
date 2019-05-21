@@ -10,7 +10,7 @@ class App extends Component {
     this.onSignIn = this.onSignIn.bind(this);
     this.state = {
       route: 'Home',
-      isSignedin: false,
+      isSignedin: true,
       user: {
         name: '',
         email: '',
@@ -53,8 +53,10 @@ class App extends Component {
     return (
       <div>{this.state.isSignedin === true ? <UserHome onRouteChange={this.onRouteChange} user={this.state.user} onSignout={this.onSignout}/> : (
         this.state.route === 'Home' ? <Home onRouteChange={this.onRouteChange} /> : (
-          this.state.route === 'Signin' ? <Signin onRouteChange={this.onRouteChange} onSignIn ={this.onSignIn}/> :
-            <Signup onRouteChange={this.onRouteChange} />
+          this.state.route === 'Signin' ? <Signin onRouteChange={this.onRouteChange} onSignIn ={this.onSignIn}/> :(
+            this.state.route === 'Signup'? <Signup onRouteChange={this.onRouteChange} />:
+            <Home onRouteChange={this.onRouteChange} />
+            )
         )
       )
       }</div>
