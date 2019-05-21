@@ -8,9 +8,10 @@ class App extends Component {
     super();
     this.onRouteChange = this.onRouteChange.bind(this);
     this.onSignIn = this.onSignIn.bind(this);
+    this.onSignout = this.onSignout.bind(this);
     this.state = {
       route: 'Home',
-      isSignedin: true,
+      isSignedin: false,
       user: {
         name: '',
         email: '',
@@ -41,7 +42,9 @@ class App extends Component {
     })
   }
   onRouteChange = (route) => {
-    this.setState({ route: route });
+    this.setState({
+       route: route 
+      });
     console.log(this.state.route)
   }
   // componentDidMount(){
