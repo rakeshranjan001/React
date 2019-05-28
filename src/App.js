@@ -13,6 +13,7 @@ class App extends Component {
       route: 'Home',
       isSignedin: false,
       user: {
+        id:0,
         name: '',
         email: '',
         joined:''
@@ -24,6 +25,7 @@ class App extends Component {
       route:'UserHome',
       isSignedin: true,
       user:{
+        id:data.id,
         name:data.name,
         email:data.email,
         joined:data.joined
