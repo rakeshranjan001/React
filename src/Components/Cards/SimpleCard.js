@@ -8,22 +8,21 @@ import Typography from "@material-ui/core/Typography";
 
 function SimpleCard(props) {
   const classes = useStyles();
-  return (
+  return (<div className="">
     <Card className={classes.card}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          {props.url}
+          <a href={props.url}>{props.url}</a>
         </Typography>
         <Typography variant="body2" component="p">
           {props.summary}
           {console.log(props)}
-          
+
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">View More</Button>
-      </CardActions>
+      <Button size="small">View More</Button>
     </Card>
+    </div>
   );
 }
 
@@ -31,7 +30,10 @@ export default SimpleCard;
 
 const useStyles = makeStyles({
     card: {
-      minWidth: 275
+      width: "100%",
+      height:"175px",
+      overflow:"auto",
+      padding:"7px"
     },
     bullet: {
       display: "inline-block",

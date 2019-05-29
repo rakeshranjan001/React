@@ -1,13 +1,28 @@
 import React from 'react';
 import SimpleCard from '../Cards/SimpleCard';
+import { Container } from 'react-floating-action-button'
+import OverlayModal from '../Modal/OverlayModal';
+import "./UserHome.css";
 class UserHome extends React.Component {
     constructor() {
         super();
         this.state = {
             error: null,
             isLoaded: false,
-            data: []
+            data: [],
+            showModal: false
         }
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+    }
+
+
+    handleOpenModal() {
+        this.setState({ showModal: true });
+    }
+
+    handleCloseModal() {
+        this.setState({ showModal: false });
     }
 
     componentDidMount() {
@@ -35,6 +50,7 @@ class UserHome extends React.Component {
     render() {
         const { onSignout } = this.props;
         const { data, isLoaded, error } = this.state;
+        const {user} = this.props;
         if (error) {
             return (
                 <div><h1>Error</h1></div>
@@ -47,8 +63,14 @@ class UserHome extends React.Component {
         }
         else {
             return (
-                <div className="cover bg-left bg-center-l" style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }}>
-                    <nav className="flex justify-between bb b--white-10 bg-black-90">
+                <div style={{ background: "https://mrmrs.github.io/photos/u/011.jpg" }} className="cover bg-left bg-center-l">
+                    <OverlayModal
+                            user = {user}
+                            showModal={this.state.showModal}
+                            handleCloseModal={this.handleCloseModal}
+                            handleOpenModal={this.handleOpenModal}
+                        />
+                    <nav className="flex justify-between b--white-10 bg-black-90">
                         <div className="dtc w2 v-mid pa3">
                             <a href="/" className="dib w2 h2 pa1 ba b--white-90 grow-large border-box">
                                 <svg className="link white-90 hover-white" data-icon="skull" viewBox="0 0 32 32">
@@ -64,17 +86,23 @@ class UserHome extends React.Component {
                                 onClick={() => onSignout()}>Signout</button>
                         </div>
                     </nav>
-
-                    <div >
-                        <div className=" fl pa6 pb7 bg-black-80">
-                            <section className="cf w-100 pa2-ns">
+                    <div>
+                    <Container>
+                        <button onClick={this.handleOpenModal}
+                            className="f6 grow no-underline br-100 ph3 pv2 mb2 dib white bg-dark-blue" href="#0">
+                            <img src="http://cdn.onlinewebfonts.com/svg/img_27177.png" alt="Add" height="20" width="20" ></img>
+                        </button>
+                    </Container>
+                        </div>
+                    <div className="flex flex-wrap">
+                            <section className="mw4">
                                 {
                                     data.map(item => (
-                                        <SimpleCard key={item.url_id} url={item.url} summary={item.summary}></SimpleCard>
+                                        <SimpleCard className="" key={item.url_id} url={item.url} summary={item.summary}></SimpleCard>
                                     ))
                                 }
                             </section>
-                        </div>
+                    
                     </div>
                 </div>
             );
@@ -83,3 +111,4 @@ class UserHome extends React.Component {
 }
 
 export default UserHome;
+
