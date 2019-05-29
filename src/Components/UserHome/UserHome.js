@@ -95,7 +95,7 @@ class UserHome extends React.Component {
                     </Container>
                         </div>
                     <div className="flex flex-wrap">
-                            <section className="mw4">
+                            <section style={{width:"95%", margin:"5px"}}>
                                 {
                                     data.map(item => (
                                         <SimpleCard className="" key={item.url_id} url={item.url} summary={item.summary}></SimpleCard>

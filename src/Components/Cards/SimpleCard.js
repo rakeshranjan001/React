@@ -33,7 +33,8 @@ const useStyles = makeStyles({
       width: "100%",
       height:"175px",
       overflow:"auto",
-      padding:"7px"
+      padding:"7px",
+      margin:"5px"
     },
     bullet: {
       display: "inline-block",
