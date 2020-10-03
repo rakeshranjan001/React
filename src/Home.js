@@ -5,9 +5,8 @@ class Home extends React.Component {
   render() {
     const { onRouteChange } = this.props;
     return (
-      <header className="sans-serif">
         <div className="cover bg-left bg-center-l">
-          <div className="bg-black-80 pb5 pb6-m pb7-l">
+          <div className="background">
             <nav className="flex justify-between bb b--white-10 bg-black-90">
               <div className="dtc w2 v-mid pa3">
                 <a href="/" className="dib w2 h2 pa1 ba b--white-90 grow-large border-box">
@@ -32,9 +31,15 @@ class Home extends React.Component {
               <span className="dib v-mid ph3 white-70 mb3">or</span>
               <button className="f6 no-underline grow dib  v-mid white ba bg-black-80  ph3 pv2 mb3 " onClick={() => onRouteChange('Signup')}>See some examples</button>
             </div>
+
+            <div className="creator">
+              <p>Developer : Rakesh Ranjan</p>
+              <p></p>
+              <p><a href="https://github.com/rakeshranjan001" className="link">https://github.com/rakeshranjan001</a></p>
+            </div>
+           
           </div>
         </div>
-      </header>
     );
   }
 }
